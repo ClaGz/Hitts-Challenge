@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hitts</title>
+		<link rel="stylesheet" type="text/css"
+			href="npm/bootstrap/dist/css/bootstrap.min.css"></link>
+		<link rel="stylesheet" type="text/css" href="npm/angular-toastr/dist/angular-toastr.css" ></link>
+		<!--<link rel="stylesheet" type="text/css" href="public/css/style.css"></link>-->
+		<script src="npm/jquery/dist/jquery.min.js"></script>
+		<script src="npm/angular/angular.min.js"></script>
+		<script src="npm/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="npm/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="npm/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+		<script src="npm/bootbox/bootbox.js"></script>
+    	<script src="npm/ngBootbox/dist/ngBootbox.min.js"></script>
+		<script src="npm/angular-toastr/dist/angular-toastr.tpls.js"></script>
+		<script src="static/hitts.js"></script>
+		<script src="static/controllers/mobile.controller.js"></script>
+		<script src="static/services/mobile.service.js"></script>
+		<script src="static/controllers/main.controller.js"></script>
+
+	</head>
+	<body ng-app="Hitts" ng-controller="MainController" class="text-center">
+		<a ui-sref="mobile" ui-sref-active="active">Listagem de celulares</a>
+		<a ui-sref="mobile" ui-sref-active="active">Ajuda</a>
+		<a ui-sref="mobile" ui-sref-active="active">Sobre</a>
+		<ui-view></ui-view>
+	</body>
+</html>

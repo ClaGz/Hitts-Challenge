@@ -1,0 +1,46 @@
+<div class="container-fluid">
+	<h3>Listagem de Celulares</h3>
+	<div>
+		<a ng-click="showCreateForm(true, null)" href="" ng-if="!displayCreateForm">Crie um novo celular</a>
+		<a ng-click="showCreateForm(false, null)" href="" ng-if="displayCreateForm">Voltar para a listagem</a>
+	</div>
+	<div ng-if="displayCreateForm" ng-include="'static/views/mobileForm.html'">
+	</div>
+	<div class="row" ng-if="!displayCreateForm">
+		<div class="col-3">
+			<div ng-repeat="mobile in mobiles">
+				<h4 ng-click="selectMobile(mobile)">{{mobile.model}}</h4>
+			</div>
+		</div>
+		<div class="col-9" ng-if="mobileSelected">
+			<div class="row">
+				<div style="padding: 0px 10px 0px 10px;">
+					<h5 ng-click="">Modelo:</h5>
+					<h5 ng-click="">{{mobileSelected.model}}</h5>
+				</div>
+				<div style="padding: 0px 10px 0px 10px;">
+					<h5 ng-click="">Preço:</h5>
+					<h5>{{mobileSelected.price}}</h5>
+				</div>
+				<div style="padding: 0px 10px 0px 10px;">
+					<h5 ng-click="">Marca:</h5>
+					<h5>{{mobileSelected.brand}}</h5>
+				</div>
+				<div style="padding: 0px 10px 0px 10px;">
+					<h5 ng-click="">Foto:</h5>
+					<img ng-src="{{mobileSelected.photo}}"></img>
+				</div>
+				<div style="padding: 0px 10px 0px 10px;">
+					<h5 ng-click="">Data:</h5>
+					<h5>{{mobileSelected.date}}</h5>
+				</div>
+				<div style="padding: 0px 10px 0px 10px;">
+					<button type="button" ng-click="showCreateForm(true, mobileSelected)"><h5>Editar</h5></button>
+				</div>
+				<div style="padding: 0px 10px 0px 10px;">
+					<button type="button" ng-click="delete(mobileSelected)"><h5>Remover</h5></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

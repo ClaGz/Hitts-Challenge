@@ -1,0 +1,24 @@
+{
+  "name": "hitts-frontapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "claudio givisiez",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.0",
+    "angular-toastr": "^2.1.1",
+    "angular-ui-bootstrap": "^2.5.6",
+    "angular-ui-router": "^1.0.18",
+    "bootstrap": "^4.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "ngbootbox": "^0.2.0",
+    "popper.js": "^1.14.3"
+  }
+}
