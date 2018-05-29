@@ -5,7 +5,7 @@
 		<link rel="stylesheet" type="text/css"
 			href="npm/bootstrap/dist/css/bootstrap.min.css"></link>
 		<link rel="stylesheet" type="text/css" href="npm/angular-toastr/dist/angular-toastr.css" ></link>
-		<!--<link rel="stylesheet" type="text/css" href="public/css/style.css"></link>-->
+		<link rel="stylesheet" type="text/css" href="public/css/style.css"></link>
 		<script src="npm/jquery/dist/jquery.min.js"></script>
 		<script src="npm/angular/angular.min.js"></script>
 		<script src="npm/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -15,15 +15,35 @@
     	<script src="npm/ngBootbox/dist/ngBootbox.min.js"></script>
 		<script src="npm/angular-toastr/dist/angular-toastr.tpls.js"></script>
 		<script src="static/hitts.js"></script>
-		<script src="static/controllers/mobile.controller.js"></script>
-		<script src="static/services/mobile.service.js"></script>
 		<script src="static/controllers/main.controller.js"></script>
-
+		<script src="static/controllers/mobile.controller.js"></script>
+		<script src="static/controllers/register.controller.js"></script>
+		<script src="static/controllers/login.controller.js"></script>
+		<script src="static/controllers/help.controller.js"></script>
+		<script src="static/controllers/about.controller.js"></script>
+		<script src="static/services/mobile.service.js"></script>
 	</head>
 	<body ng-app="Hitts" ng-controller="MainController" class="text-center">
-		<a ui-sref="mobile" ui-sref-active="active">Listagem de celulares</a>
-		<a ui-sref="mobile" ui-sref-active="active">Ajuda</a>
-		<a ui-sref="mobile" ui-sref-active="active">Sobre</a>
-		<ui-view></ui-view>
+		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+		  <header class="masthead mb-auto">
+		    <div class="inner">
+		      <h3 class="masthead-brand">Mobile</h3>
+		      <nav class="nav nav-masthead justify-content-center">
+		        <a class="nav-link active" href="" ui-sref="home" ui-sref-active="active">Home</a>
+		        <a class="nav-link" href="" ui-sref="register" ui-sref-active="active">Cadastre-se</a>
+		        <a class="nav-link" href="" ui-sref="login" ui-sref-active="active">Login</a>
+		        <a class="nav-link" href="" ui-sref="help" ui-sref-active="active">Ajuda</a>
+		        <a class="nav-link" href="" ui-sref="about" ui-sref-active="active">Sobre</a>
+		      </nav>
+		    </div>
+		  </header>
+		  <ui-view></ui-view>
+		  	
+		  <footer class="mastfoot mt-auto">
+		    <div class="inner">
+		      <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+		    </div>
+		  </footer>
+		</div>
 	</body>
 </html>

@@ -1,12 +1,37 @@
 var hittsApp = angular.module('Hitts', ['ui.router','ui.bootstrap', 'ngBootbox', 'toastr']);
 hittsApp.config(($httpProvider, $stateProvider, $urlRouterProvider)=>{
-	$urlRouterProvider.when('/').otherwise('/mobile');
+	$urlRouterProvider.when('/', '/home').otherwise('/home');
 
 	$stateProvider
+		.state('home', {
+			url: '/home',
+			templateUrl: 'static/views/home.html',
+	        controller: 'HomeController',
+		})
+		.state('register', {
+			url: '/register',
+			templateUrl: 'static/views/register.html',
+	        controller: 'RegisterController',
+		})
+		.state('login', {
+			url: '/login',
+			templateUrl: 'static/views/login.html',
+	        controller: 'LoginController',
+		})
 		.state('mobile', {
 	        url: '/mobile',
 	        templateUrl: 'static/views/mobile.html',
 	        controller: 'MobileController',
+		})
+		.state('about', {
+	        url: '/about',
+	        templateUrl: 'static/views/about.html',
+	        controller: 'AboutController',
+		})
+		.state('help', {
+	        url: '/help',
+	        templateUrl: 'static/views/help.html',
+	        controller: 'HelpController',
 		});
 
 	$httpProvider.interceptors.push(function($q, $location) {
