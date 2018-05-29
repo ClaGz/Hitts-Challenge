@@ -1,5 +1,77 @@
-<div>
-	<form>
-		
-	</form>
-</div>
+<form name="createForm" ng-submit="createForm.$valid && create(user)" novalidate>
+	<small style="color: red" ng-repeat="error in formErrors">
+	<h6>{{error.msg}}</h6>
+	</small>
+	<div class="form-group">
+        <div class="row">
+         <label class="col-lg-1 control-label">Nome</label>
+          <div class="col-lg-12">
+            <input class="form-control"
+                   type="text" placeholder="Nome"
+                   ng-model="user.name"
+                   ng-value="user.name"
+                   name="name" required />
+          </div>
+        </div>      
+        <small style="color: red"
+               ng-show="(createForm.name.$dirty || createForm.name.$touched || createForm.submitted) && createForm.name.$error.required">
+          O campo nome é obrigatório.
+        </small>
+  	</div>
+  	<div class="form-group">
+        <div class="row">
+         <label class="col-lg-1 control-label">Preço</label>
+          <div class="col-lg-12">
+            <input class="form-control"
+                   type="text" placeholder="Email"
+                   ng-model="user.email"
+                   ng-value="user.email"
+                   name="email" required />
+          </div>
+        </div>
+        <small style="color: red"
+               ng-show="(createForm.email.$dirty || createForm.email.$touched || createForm.submitted) && createForm.email.$error.required">
+          O campo email é obrigatório.
+        </small>
+  	</div>
+  	<div class="form-group">
+        <div class="row">
+         <label class="col-lg-1 control-label">Senha</label>
+          <div class="col-lg-12">
+            <input class="form-control"
+                   type="password" placeholder="Senha"
+                   ng-model="user.password"
+                   ng-value="user.password"
+                   name="password" required />
+          </div>
+        </div>
+        <small style="color: red"
+               ng-show="(createForm.password.$dirty || createForm.password.$touched || createForm.submitted) && createForm.password.$error.required">
+          O campo senha é obrigatório.
+        </small>
+  	</div>
+  	<div class="form-group">
+        <div class="row">
+         <label class="col-lg-1 control-label">Confirmação senha</label>
+          <div class="col-lg-12">
+            <input class="form-control"
+                   type="password" placeholder="confirmação de senha"
+                   ng-model="user.confirmPassword"
+                   ng-value="user.confirmPassword"
+                   name="confirmPassword" required />
+          </div>
+        </div>
+        <small style="color: red"
+               ng-show="(createForm.confirmPassword.$dirty || createForm.confirmPassword.$touched || createForm.submitted) && createForm.confirmPassword.$error.required">
+          O campo confirmação de senha é obrigatório.
+        </small>
+  	</div>
+  	<div class="form-group">
+        <div class="row">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-lg-12">
+            <input id="submit" type="submit" class="btn btn-create btn-primary" value="Salvar" ng-disabled="!createForm.$valid" style="float:right; margin-bottom: 20px" />
+          </div>
+        </div>
+  	</div>
+</form>

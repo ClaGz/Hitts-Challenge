@@ -35,13 +35,13 @@ module.exports = function(app) {
 			req.checkBody('model', 'Modelo é obrigatório').notEmpty();
 			req.checkBody('price', 'Preço é obrigatório').notEmpty();
 			req.checkBody('price', 'Preço precisa ser numeral').custom(val => {
-				return app.validator.isFloat(`${val}` || '', {locale:'pt-BR'});
+				return app.validator.isFloat(val.toString().replace('.', ',') || '', {locale:'pt-BR'});
 			});
 			req.checkBody('brand', 'Marca é obrigatória').notEmpty();
 			req.checkBody('photo', 'Foto é obrigatória').notEmpty();
 			req.checkBody('date', 'Data é obrigatória').notEmpty();
 			req.checkBody('date', 'Data precisa ter formato de data').custom(val=> {
-				return app.validator.isISO8601(`${val}`||'') || app.validator.isRFC3339(`${val}`||'') || !isNaN(Date.parse(val));
+				return app.validator.isISO8601(val.toString()||'') || app.validator.isRFC3339(val.toString()||'') || !isNaN(Date.parse(val));
 			});
 
 			var errors = req.validationErrors();
@@ -74,13 +74,13 @@ module.exports = function(app) {
 			req.checkBody('model', 'Modelo é obrigatório').notEmpty();
 			req.checkBody('price', 'Preço é obrigatório').notEmpty();
 			req.checkBody('price', 'Preço precisa ser numeral').custom(val => {
-				return app.validator.isFloat(`${val}` || '', {locale:'pt-BR'});
+				return app.validator.isFloat(val.toString().replace('.', ',') || '', {locale:'pt-BR'});
 			});
 			req.checkBody('brand', 'Marca é obrigatória').notEmpty();
 			req.checkBody('photo', 'Foto é obrigatória').notEmpty();
 			req.checkBody('date', 'Data é obrigatória').notEmpty();
 			req.checkBody('date', 'Data precisa ter formato de data').custom(val=> {
-				return app.validator.isISO8601(`${val}`||'') || app.validator.isRFC3339(`${val}`||'') || !isNaN(Date.parse(val));
+				return app.validator.isISO8601(val.toString()||'') || app.validator.isRFC3339(`${val}`||'') || !isNaN(Date.parse(val));
 			});
 
 			var errors = req.validationErrors();

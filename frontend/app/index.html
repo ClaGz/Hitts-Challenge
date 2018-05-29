@@ -16,12 +16,14 @@
 		<script src="npm/angular-toastr/dist/angular-toastr.tpls.js"></script>
 		<script src="static/hitts.js"></script>
 		<script src="static/controllers/main.controller.js"></script>
+		<script src="static/controllers/home.controller.js"></script>
 		<script src="static/controllers/mobile.controller.js"></script>
 		<script src="static/controllers/register.controller.js"></script>
 		<script src="static/controllers/login.controller.js"></script>
 		<script src="static/controllers/help.controller.js"></script>
 		<script src="static/controllers/about.controller.js"></script>
 		<script src="static/services/mobile.service.js"></script>
+		<script src="static/services/user.service.js"></script>
 	</head>
 	<body ng-app="Hitts" ng-controller="MainController" class="text-center">
 		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
@@ -32,6 +34,7 @@
 		        <a class="nav-link active" href="" ui-sref="home" ui-sref-active="active">Home</a>
 		        <a class="nav-link" href="" ui-sref="register" ui-sref-active="active">Cadastre-se</a>
 		        <a class="nav-link" href="" ui-sref="login" ui-sref-active="active">Login</a>
+		        <a class="nav-link" href="" ui-sref="mobile" ui-sref-active="active">Celulares</a>
 		        <a class="nav-link" href="" ui-sref="help" ui-sref-active="active">Ajuda</a>
 		        <a class="nav-link" href="" ui-sref="about" ui-sref-active="active">Sobre</a>
 		      </nav>

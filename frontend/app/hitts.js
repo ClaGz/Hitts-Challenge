@@ -1,6 +1,6 @@
 var hittsApp = angular.module('Hitts', ['ui.router','ui.bootstrap', 'ngBootbox', 'toastr']);
 hittsApp.config(($httpProvider, $stateProvider, $urlRouterProvider)=>{
-	$urlRouterProvider.when('/', '/home').otherwise('/home');
+	$urlRouterProvider.when('/').otherwise('/home');
 
 	$stateProvider
 		.state('home', {

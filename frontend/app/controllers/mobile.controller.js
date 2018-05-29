@@ -38,9 +38,9 @@ angular.module('Hitts').controller('MobileController', function ($scope, $uibMod
 		}).catch(err=>{
 			console.log('eee', err.data);
 			if(Array.isArray(err.data))
-				$scope.formErrors = [].concat(err.data.map(it => ({field: it.param, msg: it.msg})));
+				$scope.formErrors = err.data.map(it => ({field: it.param, msg: it.msg}));
 			else
-				$scope.formErrors = err.data;
+				$scope.formErrors = [].concat(err.data);
 			console.error('err', err);
 			toastr.error(`Erro ao tentar ${$scope.editMode ? 'editar' : 'criar'} celular`, 'Erro');
 		});

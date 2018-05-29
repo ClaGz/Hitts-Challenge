@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<h3>Listagem de Celulares</h3>
 	<div>
-		<a ng-click="showCreateForm(true, null)" href="" ng-if="!displayCreateForm">Crie um novo celular</a>
+		<a ng-click="showCreateForm(true, null)" href="" ng-if="!displayCreateForm">Criar um novo celular</a>
 		<a ng-click="showCreateForm(false, null)" href="" ng-if="displayCreateForm">Voltar para a listagem</a>
 	</div>
 	<div ng-if="displayCreateForm" ng-include="'static/views/mobileForm.html'">
